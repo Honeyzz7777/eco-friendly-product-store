@@ -1,0 +1,530 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4fdf4;
+  color: #333;
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* Header */
+header {
+  background-color: #2e7d32;
+  color: white;
+  padding: 1rem 0;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url("../images/hero-bg.jpg") no-repeat center center/cover;
+  min-height: 75vh;
+  padding: 6rem 1rem;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #388e3c;
+  overflow: hidden;
+}
+
+/* Add overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark semi-transparent overlay */
+  z-index: 1;
+}
+
+/* Ensure text is above overlay */
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background-color: #1b5e20;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #388e3c;
+}
+
+/* Features Section */
+.features {
+  padding: 3rem 1rem;
+  background-color: #e8f5e9;
+  text-align: center;
+}
+
+.features h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 30%;
+}
+
+.card h4 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover i {
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}
+
+/* About Section */
+.about {
+  padding: 3rem 1rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.about h3 {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.about a {
+  color: #1b5e20;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.about a:hover {
+  text-decoration: underline;
+}
+
+/* Testimonial Section */
+.testimonials {
+  padding: 3rem 1rem;
+  background-color: #f1f8e9;
+}
+
+.testimonials h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2e7d32;
+}
+
+.testimonial-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33.33% - 1rem);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-card span {
+  display: block;
+  font-weight: bold;
+  color: #2e7d32;
+  text-align: right;
+}
+
+/* Product Listing */
+.products {
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.products h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2e7d32;
+}
+
+.section-intro {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: #f9fff9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-card h4 {
+  margin-bottom: 0.5rem;
+  color: #2e7d32;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #1b5e20;
+}
+
+/* Calculator Page */
+.calculator {
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.calculator h2 {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#footprint-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#footprint-form label {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+#footprint-form input,
+#footprint-form select {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.result-box {
+  display: none;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #e8f5e9;
+  border-left: 6px solid #2e7d32;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #1b5e20;
+}
+
+.result-box.show {
+  display: block;
+}
+
+.result-box h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #2e7d32;
+}
+
+.result-box p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.result-box strong {
+  color: #1b5e20;
+  font-weight: bold;
+}
+
+.result-box p:last-child {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  background-color: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Contact Page */
+.contact-section {
+  padding: 1rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-section .section-intro {
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+#contact-form label {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.status-message {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 6px;
+  display: none;
+  text-align: center;
+}
+
+.status-message.success {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  border-left: 5px solid #2e7d32;
+}
+
+.status-message.error {
+  background-color: #fdecea;
+  color: #c62828;
+  border-left: 5px solid #b71c1c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  #main-nav {
+    width: 100%;
+    display: none;
+  }
+
+  #main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    background-color: #2e7d32;
+    margin-top: 1rem;
+  }
+
+  #main-nav ul li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 0.75rem 0;
+  }
+
+  #main-nav.show {
+    display: block;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .testimonial-card {
+    flex: 1 1 100%;
+  }
+}
